@@ -1,3 +1,19 @@
 fn main() {
-    println!("Hello, world!");
+    let words = ["apple", "banana", "cherry", "date", "elderberry"];
+    // let mut result: Vec<String> = vec![];
+    //
+    // for word in words {
+    //     if word.starts_with("a") || word.starts_with("b") {
+    //         let uppercase_word = word.to_uppercase();
+    //         result.push(uppercase_word.to_string());
+    //     }
+    // }
+    // println!("{:?}", result);
+
+    let result: Vec<String> = words
+        .into_iter()
+        .filter(|word| word.starts_with('a') || word.starts_with('b'))
+        .map(|word| word.to_uppercase())
+        .collect();
+    println!("{:?}", result);
 }
